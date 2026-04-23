@@ -1,4 +1,11 @@
-"""# 1
+"""
+Módulo 02: Lógica de Condicionales
+Propósito: Ejercicios de validación, control de flujo y lógica booleana.
+Autor: Richard Rosal
+Fecha: Abril 2026
+"""
+
+# 1. Mayor de edad
 preguntar_edad = int(input("Por favor, indique su edad: "))
 
 if preguntar_edad < 18:
@@ -7,7 +14,7 @@ else:
     print("Usted es mayor de edad")
 
 
-# 2
+# 2. Par o Impar
 validar_par = int(input("Introduzca un numero para validar si es par: "))
 
 if validar_par % 2 == 0:
@@ -16,7 +23,7 @@ else:
     print("Este numero es impar")
 
 
-# 3
+# 3. Comparación Simple
 num1 = int(input("Ingrese el primer numero: "))
 num2 = int(input("Ahora escriba el segundo numero: "))
 
@@ -28,7 +35,7 @@ else:
     print("Los dos numeros son iguales")
 
 
-# 4
+# 4. Positivo, Negativo o Cero
 valor = int(input("Ingrese un numero a verificar: "))
 
 if valor == 0:
@@ -39,7 +46,7 @@ else:
     print("El numero es positivo")
 
 
-# 5
+# 5. Aprobado o Reprobado
 nota = int(input("Ingrese una calificacion, por favor: "))
 
 if nota >= 10:
@@ -48,7 +55,7 @@ else:
     print("Usted esta reprobado")
 
 
-# 6
+# 6. Multiplicidad
 cifra = int(input("Ingrese un numero, por favor: "))
 
 if cifra % 5 == 0:
@@ -57,8 +64,8 @@ else:
     print("El numero no es divisible por 5")
 
 
-# 7
-user = input("Ingrese su nombre de usuaro, por favor: ").lower()
+# 7. Login Simple
+user = input("Ingrese su nombre de usuario, por favor: ").lower()
 
 if user == "admin":
     print("Hola, Jefe")
@@ -66,16 +73,17 @@ else:
     print("Hola, Usuario")
 
 
-# 8
+# 8. Descuento de Tienda (Se añade 'else' para feedback del usuario)
 monto_compra = float(input("Indique el monto de la compra, por favor: "))
 
 if monto_compra > 100:
-    print(
-        f"La compra recibe un descuento de 10%.Total a pagar: {monto_compra - (monto_compra * 0.10)}"
-        )
+    descuento = monto_compra * 0.10
+    print(f"La compra recibe un descuento de 10%. Total a pagar: {monto_compra - descuento}")
+else:
+    print(f"Total a pagar sin descuento: {monto_compra}")
 
 
-# 9
+# 9. Rango de Número
 num_rango = int(input("Ingrese un numero entre 1 y 100: "))
 
 if num_rango >= 1 and num_rango <= 100:
@@ -84,19 +92,17 @@ else:
     print("El numero se encuentra fuera del rango solicitado")
 
 
-# 10    Aqui si me jodiste, lo admito. esto no recuerdo haberlo hecho
-tener_hambre = input("Indique con T(true) o F(false) si tiene hambre: ").lower()
+# 10. Operador Not (Corregido para usar 'not' sobre un booleano)
+hambre_input = input("¿Tiene hambre? (S/N): ").lower()
+hambre = (hambre_input == "s")
 
-if not tener_hambre:
-    print("No hay hambre. O sea, False, el inverso a True")
+if not hambre:
+    print("No hay hambre. Estado: Satisfecho")
 else:
-    print(
-    "Aqui si hay hambre ya que estamos con el opuesto a False," \
-    "\n o sea, True"
-    )
+    print("Aqui si hay hambre. Estado: Necesita comer")
 
 
-# 11
+# 11. Clasificador de Edad
 user_age = int(input("Ingrese la edad, por favor: "))
 
 if user_age < 13:
@@ -107,23 +113,26 @@ else:
     print("Adulto")
 
 
-# 12
+# 12. Calculadora
 num1 = int(input("Escriba el primer numero: "))
 num2 = int(input("Escriba ahora el segundo numero: "))
-operacion = input("Ingrese ahora el simbolo de la operacion a realizar: ")
+operacion = input("Ingrese el simbolo de la operacion (+, -, x, /): ")
 
 if operacion == "+":
-    print(f"La operacion suma de {num1} y {num2} equivale a {num1 + num2}")
+    print(f"Suma: {num1 + num2}")
 elif operacion == "-":
-    print(f"La operacion resta de {num1} y {num2} equivale a {num1 - num2}")
+    print(f"Resta: {num1 - num2}")
 elif operacion == "x":
-    print(f"La operacion multiplicacion de {num1} y {num2} equivale a {num1 * num2}")
+    print(f"Multiplicacion: {num1 * num2}")
 else:
-    print(f"La operacion division de {num1} y {num2} equivale a {num1 / num2}")
+    if num2 != 0:
+        print(f"Division: {num1 / num2}")
+    else:
+        print("Error: No se puede dividir entre cero")
 
 
-# 13
-semaforo = input("Introduzca el color del semaforo que prefiera: ").lower()
+# 13. Semáforo
+semaforo = input("Introduzca el color del semaforo: ").lower()
 
 if semaforo == "rojo":
     print("Detengase")
@@ -132,13 +141,11 @@ elif semaforo == "amarillo":
 elif semaforo == "verde":
     print("Avance")
 else:
-    print("Revise el color ingresado")
+    print("Color no reconocido")
 
 
-# 14
-dia_semana = int(input("Ingrese el numero que corresponda al dia de la semana: "))
-
-#  Se que hay una forma mas sencilla de hacer esto, pero esta es la que recuerdo
+# 14. Día de la Semana
+dia_semana = int(input("Ingrese el numero del dia (1-7): "))
 
 if dia_semana == 1:
     print("Lunes")
@@ -155,26 +162,26 @@ elif dia_semana == 6:
 elif dia_semana == 7:
     print("Domingo")
 else:
-    print("Error en el numero del dia ingresado")
+    print("Error en el numero ingresado")
 
 
-# 15
-nota = int(input("Ingrese la calificacion de la evaluacion: "))
+# 15. Notas Americanas 
+nota = int(input("Ingrese la calificacion (0-20): "))
 
-if nota >= 18 and nota <= 20:  # Si, hay una forma mas pythonic de hacerlo pero no lo recuerdo
+if nota >= 18:
     print("A")
-elif nota >= 15 and nota <= 17:
+elif nota >= 15:
     print("B")
-elif nota >= 14 and nota <= 16:
+elif nota >= 12:
     print("C")
-elif nota >= 11 and nota <= 14:
+elif nota >= 10:
     print("D")
-elif nota <= 10: # Si, ya se, deberia ser else, pero me gusta delimitar mejor con elif
+else:
     print("F")
 
 
-# 16
-info = input("Introduzca la informacion que usted quiera: ")
+# 16. Validador de Texto
+info = input("Introduzca informacion: ")
 
 if info == "":
     print("Error: Campo requerido")
@@ -182,10 +189,10 @@ else:
     print("Informacion correctamente almacenada")
 
 
-# 17
-mes = input("Introduce el nombre del mes del año: ").lower()
+# 17. Estaciones del Año
+mes = input("Introduce el nombre del mes: ").lower()
 
-if mes == "enero" or mes == "febrero" or mes == "diciembre": # Ya se que no es pythonic
+if mes == "enero" or mes == "febrero" or mes == "diciembre":
     print("Invierno")
 elif mes == "marzo" or mes == "abril" or mes == "mayo":
     print("Primavera")
@@ -195,9 +202,9 @@ else:
     print("Otoño")
 
 
-# 18
+# 18. Comparación de Cadenas
 word1 = input("Escriba la primera palabra: ")
-word2 = input("Ahora escriba la segunda palabra: ")
+word2 = input("Escriba la segunda palabra: ")
 
 if word1 == word2:
     print("Las palabras son iguales")
@@ -205,32 +212,32 @@ else:
     print("Las palabras son diferentes")
 
 
-# 19
-vehiculo = input("Ingrese el tipo de vehiculo a registrar: ").lower()
+# 19. Sistema de Peaje
+vehiculo = input("Ingrese el tipo de vehiculo (moto, carro, camion): ").lower()
 
 if vehiculo == "moto":
-    print("Tipo de vehiculo: Moto. Total a pagar: $1")
+    print("Tarifa: $1")
 elif vehiculo == "carro":
-    print("Tipo de vehiculo: Carro. Total a pagar: $2")
+    print("Tarifa: $2")
 else:
-    print("Tipo de vehiculo: Camion. Total a pagar: $5")
+    print("Tarifa: $5")
 
 
-# 20
-numero1 = int(input("Escribe el primer numero: "))
-numero2 = int(input("Introduce ahora el segundo: "))
-numero3 = int(input("Ahora escribe el tercer numero: "))
+# 20. Mayor de Tres
+numero1 = int(input("Primer numero: "))
+numero2 = int(input("Segundo numero: "))
+numero3 = int(input("Tercer numero: "))
 
 if numero1 > numero2 and numero1 > numero3:
     print(f"El numero {numero1} es el mayor")
 elif numero2 > numero1 and numero2 > numero3:
     print(f"El numero {numero2} es el mayor")
-elif numero3 > numero1 and numero3 > numero2:
+else:
     print(f"El numero {numero3} es el mayor")
 
 
-# 21
-codigo = input("Ingrese el codigo observado: ").lower()
+# 21. Status Code QA 
+codigo = int(input("Ingrese el codigo de error: "))
 
 if codigo == 200:
     print("Exito")
@@ -242,17 +249,17 @@ else:
     print("Codigo desconocido")
 
 
-# 22
+# 22. Fuerza de Password
 password = input("Ingrese su contraseña: ")
 
 if len(password) < 8:
-    print(f"El password {password} es muy debil")
+    print("Password debil")
 else:
-    print(f"El password {password} es fuerte")
+    print("Password fuerte")
 
 
-# 23
-bisiesto = int(input("Ingrese el año a verificar si es bisiesto o no: "))
+# 23. Año Bisiesto
+bisiesto = int(input("Ingrese año: "))
 
 if (bisiesto % 4 == 0 and bisiesto % 100 != 0) or (bisiesto % 400 == 0):
     print(f"El año {bisiesto} es bisiesto")
@@ -260,81 +267,80 @@ else:
     print(f"El año {bisiesto} NO es bisiesto")
 
 
-# 24
-email = input("Ingrese un email con formato correcto: ").lower()
+# 24. Verificador de Email
+email = input("Ingrese un email: ").lower()
 
 if "@" in email:
-    print(f"El email {email} tiene formato correcto")
+    print(f"Formato correcto")
 else:
-    print(f"El email {email} carece de @ y, por eso, no tiene formato correcto")
+    print(f"Error: El email carece de @")
 
 
-# 25
-username = "admin"
-contrasena = 12345
+# 25. Login de Dos Pasos
+usr_db = "admin"
+pwd_db = 12345
+user_in = input("Usuario: ").lower()
+pwd_in = int(input("Contraseña: "))
 
-user = input("Ingrese su usuario, por favor: ").lower()
-contra = int(input("Ahora ingrese su contraseña: "))
-
-if user == username and contra == contrasena:
+if user_in == usr_db and pwd_in == pwd_db:
     print("Datos correctos. Acceso permitido")
 else:
-    print("Usuario o Contraseña incorrecta. Acceso no permitido")
+    print("Acceso denegado")
 
 
-# 26
+# 26. Simulador de Cajero
 saldo = 20000
-
-retiro = float(input("Ingrese el monto a retirar, por favor: $ "))
+retiro = float(input("Monto a retirar: $ "))
 
 if retiro <= saldo:
-    print(f"El monto ${retiro} es menor al saldo ${saldo}. Retiro aprobado")
+    print(f"Retiro aprobado. Saldo restante: ${saldo - retiro}")
 else:
-    print("El monto de retiro excede el saldo disponible. Retiro no permitido")
+    print("Fondos insuficientes")
 
 
-# 27
-lado1 = int(input("Ingrese la medida del primer lado: "))
-lado2 = int(input("Ahora el segundo lado: "))
-lado3 = int(input("Finalmente, ingrese la medida del tercer lado: "))
+# 27. Tipo de Triángulo
+lado1 = int(input("Lado 1: "))
+lado2 = int(input("Lado 2: "))
+lado3 = int(input("Lado 3: "))
 
 if lado1 == lado2 and lado2 == lado3:
-    print("Este es un triangulo equilatero")
-elif lado1 == lado2 and lado2 > lado3:
-    print("Este es un triangulo isosceles")
-elif lado1 > lado2 and lado2 > lado3:
-    print("Y este es un triangulo escaleno, señoras y señores")
+    print("Triangulo equilatero")
+elif lado1 == lado2 or lado2 == lado3 or lado1 == lado3:
+    print("Triangulo isosceles")
+else:
+    print("Triangulo escaleno")
 
 
-# 28
-altura = float(input("Ingrese su altura (m): "))
-peso = float(input("Ahora ingrese su peso (kg), por favor: "))
+# 28. Calculadora IMC
+altura = float(input("Altura (m): "))
+peso = float(input("Peso (kg): "))
 
-imc = peso / altura ** 2
+imc = peso / (altura ** 2)
 
 if imc < 18.5:
     print("Bajo peso")
-elif imc >= 18.5 and imc <= 24.9:
+elif imc <= 24.9:
     print("Peso normal")
-elif imc >= 25 and imc <= 29.9:
+elif imc <= 29.9:
     print("Sobrepeso")
-elif imc >= 30 and imc <= 34.9:
-    print("Obesidad tipo 1")
-elif imc >= 35 and imc <= 39.9:
-    print("Obesidad tipo 2")
-elif imc >= 40:
-    print("Obesidad tipo 3")
 else:
-    print("Error en datos introducidos")
-"""
+    print("Obesidad")
 
-# 29
-word = input("Ingrese una palabra a verificar si es o no palindroma: ").lower()
-reverse = word[::-1]
 
-if word == reverse:
+# 29. Verificador de Palíndromo
+word = input("Ingrese una palabra: ").lower()
+
+if word == word[::-1]:
     print(f"La palabra {word} es palindroma")
 else:
     print(f"La palabra {word} no es palindroma")
 
 
+# 30. Orquestador de Pruebas
+codigo_error = int(input("Codigo de error detectado: "))
+prioridad = input("Prioridad (alta/baja): ").lower()
+if codigo_error >= 500 and prioridad == "alta":
+    reporte = "Urgente"
+else:
+    reporte = "Pendiente"
+print(f"El bug con error {codigo_error} se ha marcado como: {reporte}")

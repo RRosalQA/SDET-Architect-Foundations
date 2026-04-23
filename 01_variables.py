@@ -1,3 +1,11 @@
+"""
+Módulo 01: Fundamentos de Python - Variables y Tipos de Datos
+Propósito: Práctica inicial sobre declaración de variables, tipos primitivos y manipulación básica.
+Autor: Richard Rosal
+Fecha: Abril 2026
+"""
+
+
 # 1
 edad = 44
 
