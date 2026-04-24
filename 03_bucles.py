@@ -11,11 +11,11 @@ for i in range(1, 11):
 
 
 # 02. Imprimir números del 10 al 1 con `while`.
-num = 1
+num = 10
 
-while num <= 10:
+while num >= 1:
     print(num)
-    num += 1
+    num -= 1
 
 
 # 03. Sumar los primeros 50 números naturales.
